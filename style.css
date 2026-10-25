@@ -232,6 +232,43 @@ input, textarea {
   overflow: hidden;
 }
 
+/* Hero Background with Circular Reveal */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 0, transparent var(--reveal-radius, 0), var(--color-bg) var(--reveal-radius, 0)),
+    var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition:
+    --reveal-radius 0.3s ease-out,
+    --mouse-x 0.1s linear,
+    --mouse-y 0.1s linear;
+  opacity: 1;
+}
+
+/* Initial state - fully covered */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg);
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+/* When hovering, the radial gradient creates the reveal */
+.header:hover .hero-bg {
+  --reveal-radius: 200px;
+}
+
+.header:not(:hover) .hero-bg {
+  --reveal-radius: 0;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -245,6 +282,20 @@ input, textarea {
   background-color: rgba(var(--color-bg-elevated), 0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
+  transition: transform var(--transition-base) ease, opacity var(--transition-base) ease;
+}
+
+/* Nav hide/show on scroll */
+.nav--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .logo {
@@ -292,6 +343,8 @@ input, textarea {
   display: flex;
   align-items: center;
   padding: var(--space-2xl) 0;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -575,6 +628,24 @@ input, textarea {
 /* ========================================
    RESPONSIVE
 ======================================== */
+
+/* Mobile: Show GIF at full opacity, no effects */
+@media (max-width: 767px) {
+  .hero-bg {
+    background: var(--bg-image, none) center/cover no-repeat;
+    opacity: 1;
+    transition: none;
+  }
+
+  .hero-bg::before {
+    display: none;
+  }
+
+  .header:hover .hero-bg {
+    --reveal-radius: 0;
+  }
+}
+
 @media (min-width: 640px) {
   .hero-title {
     font-size: var(--font-size-5xl);

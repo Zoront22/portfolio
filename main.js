@@ -20,6 +20,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Background
+const heroBg = document.getElementById('heroBg');
+const header = document.querySelector('.header');
+
+if (heroBg && header) {
+  // Set background image (using one of the project images)
+  heroBg.style.setProperty('--bg-image', 'url("/assets/Background.gif")');
+
+  header.addEventListener('mousemove', (e) => {
+    const rect = header.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    heroBg.style.setProperty('--mouse-x', `${x}px`);
+    heroBg.style.setProperty('--mouse-y', `${y}px`);
+  });
+
+  // Reset position when mouse leaves
+  header.addEventListener('mouseleave', () => {
+    heroBg.style.setProperty('--mouse-x', '50%');
+    heroBg.style.setProperty('--mouse-y', '50%');
+  });
+}
+
+// Nav hide/show on scroll
+const nav = document.getElementById('nav');
+let lastScrollY = window.scrollY;
+let ticking = false;
+
+function updateNav() {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    // Scrolling down - hide nav
+    nav.classList.add('nav--hidden');
+    nav.classList.remove('nav--visible');
+  } else {
+    // Scrolling up - show nav
+    nav.classList.add('nav--visible');
+    nav.classList.remove('nav--hidden');
+  }
+
+  lastScrollY = currentScrollY;
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateNav);
+    ticking = true;
+  }
+}, { passive: true });
+
+// Ensure nav is visible at top of page
+window.addEventListener('load', () => {
+  if (window.scrollY <= 100) {
+    nav.classList.add('nav--visible');
+    nav.classList.remove('nav--hidden');
+  }
+});
+
 // Scroll animations
 const observerOptions = {
   root: null,
@@ -48,10 +108,6 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
-
-    // If using Formspree, Netlify Forms, or similar service, let it submit normally
-    // (remove e.preventDefault() and the fetch logic below)
-    // For now, using fetch to handle Formspree AJAX submission
 
     e.preventDefault();
     submitBtn.disabled = true;
