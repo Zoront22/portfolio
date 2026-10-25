@@ -1,154 +1,77 @@
-# Personal Portfolio
+# Osvaldo Najera Sandoval — Full-Stack Web Developer
 
-Minimalist portfolio built with **Vite + HTML/CSS/JS vanilla**. Lightweight, fast, and easy to customize.
+Detail-oriented and motivated full-stack web developer based in Saltillo, Coahuila, Mexico. Experienced in creating and designing dynamic, responsive websites and APIs using modern technologies such as PHP, JavaScript, Nuxt.js, and Laravel. Committed to solving real problems and continuous learning through clean, scalable code.
 
-## 🚀 Quick Start
+---
 
-```bash
-# Install dependencies
-npm install
+## Contact
 
-# Development (opens at http://localhost:3000)
-npm run dev
+- **Location:** Saltillo, Coah., Mexico
+- **Phone:** +52 844-385-2323
+- **Email:** [osvaldoNajeraSandoval@outlook.com](mailto:osvaldoNajeraSandoval@outlook.com)
 
-# Build for production
-npm run build
+---
 
-# Preview build locally
-npm run preview
-```
+## Objective
 
-## 📁 Project Structure
+To contribute adaptability, work ethic, and technical experience to a cutting-edge development team where I can grow professionally and provide meaningful digital solutions. I aim to apply my full-stack development skills to build secure, scalable, and user-focused web applications and APIs.
 
-```
-portfolio/
-├── index.html      # Main HTML with all sections
-├── style.css       # Complete styles (CSS variables for theming)
-├── main.js         # Minimal JS: smooth scroll, animations, form handling
-├── vite.config.js  # Vite configuration
-├── package.json
-└── public/         # Static assets (favicon, images)
-```
+---
 
-## ✨ Included Sections
+## Tech Stack
 
-- **Hero** - Introduction with name, title, and CTAs
-- **About Me** - Text + tech skills/tags
-- **Projects** - Grid of 3 cards with image, description, tags, and links
-- **Contact** - Form ready for Formspree/Netlify Forms
-- **Footer** - Simple copyright
+- **Languages:** PHP, JavaScript, TypeScript, HTML, CSS, basic Python
+- **Frameworks & Tools:** Nuxt.js, Laravel, WordPress (custom PHP and Elementor), Shopify CLI
+- **Databases:** MySQL, phpMyAdmin
+- **Web & APIs:** RESTful API integration, administrative panels, responsive web design
+- **Other:** Clean and scalable code, user experience, security, performance optimization
 
-## 🎨 Quick Customization
+---
 
-### Colors (Auto Dark/Light Mode)
-Edit CSS variables in `style.css` (lines 10-35):
+## Experience
 
-```css
-:root {
-  --color-primary: #6366f1;      /* Primary color */
-  --color-accent: #22d3ee;       /* Accent color */
-  --color-bg: #0f0f12;           /* Main background */
-  --color-text: #f4f4f5;         /* Main text */
-  /* ... more variables */
-}
-```
+### Full-Stack Web Developer / Project Manager
 
-### Content
-Edit `index.html` and change:
-- "Your Name" → your real name
-- Hero, about, projects texts
-- GitHub, LinkedIn, email links
-- Form `action` (see deployment)
+**Heintec — Saltillo, Coah., Mexico**  
+**January 2024 – June 2025**
 
-### Project Images
-Replace `<svg>` placeholders in `.project-image` with real images:
-```html
-<img src="/assets/project1.jpg" alt="Project description" />
-```
-Place your images in `public/assets/`.
+- Created and administered website logic, and designed and maintained web pages for various clients.
+- Built scalable and dynamic web applications focused on user experience, security, and performance.
+- Used WordPress with custom PHP code and Elementor, Shopify CLI, Nuxt.js, Laravel, MySQL/phpMyAdmin, TypeScript, JavaScript, and PHP.
+- Integrated RESTful APIs and developed administrative panels that allow clients to manage content independently without requiring code modifications.
+- Collaborated closely with other developers and adapted quickly to emerging technologies.
+- Provided sporadic assistance to Heinsolar, the solar panel installation division, in developing and maintaining their digital presence and internal tools.
+- Demonstrated professional principles such as responsibility, perseverance, honesty, and solidarity, ensuring progress reports and projects were delivered on time, even under difficult circumstances.
 
-## 🌐 Free Deployment
+---
 
-### Netlify (Recommended - Easiest)
-1. Push repo to GitHub
-2. In Netlify: "Add new site" → "Import from Git"
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Done! You get a `*.netlify.app` URL
+## Education & Certifications
 
-### Vercel
-1. Import repo in Vercel
-2. Auto-detects Vite
-3. Auto-deploy to `*.vercel.app`
+- **FreeCodeCamp** — Formal certification in HTML, CSS, JavaScript, APIs, and basic Python.
+- **HackerRank** — Practical skills development in PHP, Laravel, and Nuxt.js through exercises and projects.
+- **Self-taught training** — Complemented by studying official documentation and applying knowledge in real projects, demonstrating self-motivation, adaptability, and a solid foundation in modern web technologies.
+- **Systems Engineering** — University studies initiated, with enthusiasm to continue learning and explore branches of computing beyond web programming.
 
-### GitHub Pages
-1. In `vite.config.js` change `base: '/'` to `base: '/your-repo/'`
-2. In Settings → Pages: Source = "GitHub Actions"
-3. Create `.github/workflows/deploy.yml`:
+---
 
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm ci
-      - run: npm run build
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
+## Communication
 
-### Cloudflare Pages
-1. Connect repository
-2. Build command: `npm run build`
-3. Output directory: `dist`
+- Able to communicate designs, plans, and work results in technological processes, contributing productively to discussions and project development.
+- Capable of listening, understanding, and responding constructively using a variety of communication formats.
+- Experienced in adapting technical language for diverse audiences, ensuring effective and coherent communication.
 
-## 📧 Contact Form
+---
 
-The form uses **Formspree** by default (free up to 50 submissions/month):
+## Leadership
 
-1. Create account at [formspree.io](https://formspree.io)
-2. Create a new form
-3. Copy the `form-id` (e.g., `xaybqwer`)
-4. In `index.html` change:
-   ```html
-   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
+- **Project Administration:** Planning, implementing, and supervising projects to ensure established deadlines and objectives are met.
+- **Strategic Decision Making:** Examining circumstances and making decisions that align with and complement project objectives.
+- **Change Management and Adaptability:** Leading teams during transformation processes while preserving motivation and focus on goals.
 
-**Free Alternatives:**
-- Netlify Forms (add `data-netlify="true"` to form)
-- EmailJS (more control, requires JS)
-- Web3Forms (no registration, free)
+---
 
-## 🛠 Useful Scripts
+## References
 
-```json
-{
-  "scripts": {
-    "dev": "vite",           // Development with HMR
-    "build": "vite build",   // Production build to /dist
-    "preview": "vite preview" // Serve /dist locally
-  }
-}
-```
-
-## 📱 Responsive & Accessible
-
-- Mobile-first (breakpoints: 640px, 768px, 1024px)
-- Auto dark/light mode (`prefers-color-scheme`)
-- Respects `prefers-reduced-motion`
-- Correct HTML5 semantics
-- Visible focus for keyboard navigation
-
-## 📄 License
-
-MIT - Use freely for your personal portfolio.
+**Luis Fernando Pruneda Hernandez**  
+Heintec — Full Stack  
+[admin@heintec.com.mx](mailto:admin@heintec.com.mx)
